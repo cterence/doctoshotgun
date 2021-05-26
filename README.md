@@ -3,7 +3,6 @@
 This script lets you automatically book a vaccine slot on Doctolib for today or
 tomorrow, following rules from the French Government.
 
-
 <p align="center">
   <img src="https://raw.githubusercontent.com/rbignon/doctoshotgun/da5f65a1e2ecc7b543376b1549c62004a454b90d/example.svg">
 </p>
@@ -35,6 +34,20 @@ Optional arguments:
 --center "<center_name>" [--center "<other_center>" …]  : filter centers to only choose one from the provided list
 --patient <index>                                       : select patient for which book a slot
 --debug                                                 : display debug information
+```
+
+### With Docker
+
+Build the image:
+
+```
+docker build . -t doctoshotgun
+```
+
+Run the container:
+
+```
+docker run doctoshotgun <city> <email> [password]
 ```
 
 ### Multiple cities
@@ -73,7 +86,6 @@ You can also give the patient id as argument:
 $ ./doctoshotgun.py paris roger.philibert@gmail.com PASSWORD -p 1
 Starting to look for vaccine slots for Luce Philibert...
 ```
-
 
 ## Development
 
